@@ -1,2 +1,0 @@
-import type { Metric } from '../types/treasury';
-export default function MetricCard({metric,index}:{metric:Metric,index:number}) {return <div className="metric panel"><div className="metric-top"><span>{metric.label}</span><span className="metric-mark">0{index+1}</span></div><strong>{metric.value}</strong><small>{metric.change}</small></div>;}

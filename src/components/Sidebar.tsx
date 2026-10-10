@@ -1,6 +1,0 @@
-import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, ArrowLeftRight, ChartNoAxesCombined, SlidersHorizontal, TriangleAlert, Bot, FileText, Settings, Landmark } from 'lucide-react';
-const links = [
- ['/', 'Overview', LayoutDashboard],['/transactions','Transactions',ArrowLeftRight],['/forecast','Forecasting',ChartNoAxesCombined],['/simulator','What-If Simulator',SlidersHorizontal],['/alerts','Alert Matrix',TriangleAlert],['/advisor','AI Advisor',Bot],['/reports','Reports',FileText],['/admin','Admin & Settings',Settings]
-] as const;
-export default function Sidebar(){return <aside className="sidebar"><div className="brand"><div className="brand-icon"><Landmark size={20}/></div><div><strong>TREASURY<span>PULSE</span></strong><small>Liquidity Command Center</small></div></div><div className="navlabel">WORKSPACE</div><nav>{links.map(([path,label,Icon])=><NavLink key={path} to={path} end={path==='/'} className={({isActive})=>`navitem ${isActive?'active':''}`}><Icon size={17}/>{label}</NavLink>)}</nav><div className="sidebar-bottom"><div className="avatar">TP</div><div><strong>Demo Workspace</strong><small>Frontend skeleton</small></div></div></aside>;}
